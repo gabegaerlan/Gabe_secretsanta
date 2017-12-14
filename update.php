@@ -54,9 +54,6 @@ if(isset($_GET['wishId'])){
 <html>
     <head>
         <title>Update Wishlist</title>
-        <style>
-        
-        </style>
         <!--Needed for Bootstrap,Jquery,Javascript,and Ajax-->
       <meta charset="utf-8">
       <link rel="stylesheet" type="text/css" href="/secretsanta/styles.css">

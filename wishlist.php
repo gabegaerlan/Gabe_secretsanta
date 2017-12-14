@@ -9,9 +9,6 @@ if(!isset($_SESSION['fullName']))// if(!isset($_SESSION['userName']) || !isset($
 <html>
     <head>
         <title>Wishlist</title>
-        <style>
-        
-        </style>
         <!--Needed for Bootstrap,Jquery,Javascript,and Ajax-->
       <meta charset="utf-8">
       <link rel="stylesheet" type="text/css" href="/secretsanta/styles.css">
