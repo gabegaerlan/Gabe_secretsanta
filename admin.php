@@ -11,7 +11,7 @@ if(!isset($_SESSION['fullName']))// if(!isset($_SESSION['userName']) || !isset($
         <title>Update Wishlist</title>
         <!--Needed for Bootstrap,Jquery,Javascript,and Ajax-->
       <meta charset="utf-8">
-      <link rel="stylesheet" type="text/css" href="/secretsanta/styles.css">
+      <link rel="stylesheet" type="text/css" href="styles.css">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link href="https://fonts.googleapis.com/css?family=Fugaz+One" rel="stylesheet">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
