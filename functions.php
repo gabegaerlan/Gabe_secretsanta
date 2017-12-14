@@ -98,7 +98,6 @@ function signup()
         $sql = "INSERT INTO users(firstName,lastName,username,password)
                 VALUES(:firstName,:lastName,:username,:password)";
         $np = array();
-        echo "$sql";
         
         $np[':firstName'] = $_GET['firstName'];
         $np[':lastName'] = $_GET['lastName'];
@@ -160,7 +159,6 @@ function addWishlist()
         $sql = "INSERT INTO wishlist(wishName,wishPrice,description,wishUser)
                 VALUES(:wishName,:wishPrice,:description,:wishUser)";
         $np = array();
-        echo "$sql";
         
         $np[':wishName'] = $_GET['wishName'];
         $np[':wishPrice'] = $_GET['wishPrice'];
