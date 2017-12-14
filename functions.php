@@ -23,22 +23,20 @@ function loginProcess()
         $stmt = $conn->prepare($sql);
         $stmt->execute($namedParameters);
         $record = $stmt->fetch();
-        
-        if (empty($record)) 
-        {
-        
-        echo "<center>Incorrect Username or Password</center>";
-        
-        } 
-        else 
-        {
+
+        $realPW = $record['password'];
+
+        if (!password_verify($_POST['password'], $realPW)) {
+            echo 'Incorrect Username or Password';
+        } else {
             $_SESSION['login'] = true;
             $_SESSION['username'] = $record['username'];
             $_SESSION['fullName'] = $record['firstName'] . "  " . $record['lastName'];
             $_SESSION['userID'] = $record['userID'];
-        
+
             header("Location: list.php");
         }
+
     }
 }
 
