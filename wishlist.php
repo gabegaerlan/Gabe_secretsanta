@@ -28,7 +28,7 @@ if(!isset($_SESSION['fullName']))// if(!isset($_SESSION['userName']) || !isset($
         <ul class="nav navbar-nav">
           <li class="active"><a href="main.html">Home</a></li>
           <li><a href="list.php">User List</a></li>
-          <li><a href="wishlist.php">Wish List</a></li>
+          <li><a href="wishlist.php">Wish list</a></li>
           <li><a href="add.php">Add to Wishlist</a></li>
           <li><a href="admin.php">Update/Delete Wishlist</a></li>
         </ul>

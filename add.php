@@ -69,7 +69,7 @@ if(!isset($_SESSION['fullName']))// if(!isset($_SESSION['userName']) || !isset($
         					
         					<div class="form-group">    <!--password-->
         						<label for="reg_email" class="sr-only">Email</label>
-        						<input type="text" class="form-control" id="reg_email" name="wishUser" placeholder="Name of Person">
+        						<input type="text" class="form-control" id="reg_email" name="wishUser"  placeholder="Name of Person">
         					</div>
         				</div>
         				<button type="submit" name="addWish" class="login-button"><i class="fa fa-chevron-right"></i></button>
