@@ -33,6 +33,7 @@
           if(isset($_SESSION['admin']))
           {
           echo'<li><a href="admin.php">Update/Delete</a></li>';
+          echo'<li><a href="index.php">Delete User</a></li>';
           }
           ?>
         </ul>

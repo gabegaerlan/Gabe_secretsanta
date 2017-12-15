@@ -44,6 +44,7 @@ if(!isset($_SESSION['admin']))// if(!isset($_SESSION['userName']) || !isset($_SE
           if(isset($_SESSION['admin']))
           {
           echo'<li><a href="admin.php">Update/Delete</a></li>';
+          echo'<li><a href="index.php">Delete User</a></li>';
           }
           ?>
         </ul>

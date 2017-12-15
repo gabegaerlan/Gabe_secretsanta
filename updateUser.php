@@ -7,12 +7,12 @@ if(!isset($_SESSION['fullName']))// if(!isset($_SESSION['userName']) || !isset($
 
 include'db.php';
 $conn = getDatabaseConnection();
-function getWishInfo() {
+function getUserInfo() {
     global $conn;
     
     $sql = "SELECT * 
-            FROM wishlist
-            WHERE wishId = " . $_GET['wishId']; 
+            FROM users
+            WHERE userId = " . $_GET['userId']; 
     
     $stmt = $conn->prepare($sql);
     $stmt->execute();
@@ -21,20 +21,21 @@ function getWishInfo() {
     return $record;
 
 }
-    if(isset($_GET['updateWish'])){// checks whether admin has submitted form
+    if(isset($_GET['updateUser'])){// checks whether admin has submitted form
     $conn = getDatabaseConnection();
     echo "Form has been submitted!";
-    $sql = "UPDATE wishlist
-            SET wishName = :wishName,
-                wishPrice = :wishPrice,
-                description = :description
-            WHERE wishId = :wishId";
+    $sql = "UPDATE users
+            SET firstName = :firstName,
+                lastName = :lastName,
+                username = :username,
+                password = :password
+            WHERE userId = :userId";
     $np = array();
-
-    $np[':wishId'] = $_GET['wishId'];
-    $np[':wishName'] = $_GET['wishName'];
-    $np[':wishPrice'] = $_GET['wishPrice'];
-    $np[':description'] = $_GET['description'];
+    $np[':userId'] = $_GET['userId'];
+    $np[':firstName'] = $_GET['firstName'];
+    $np[':lastName'] = $_GET['lastName'];
+    $np[':username'] = $_GET['username'];
+    $np[':password'] = $_GET['password'];
     
     $stmt = $conn->prepare($sql);
     $stmt->execute($np);
@@ -42,11 +43,11 @@ function getWishInfo() {
     
     
     echo"Record has been updated!";
-    header("Location: admin.php");
+    header("Location: index.php");
     
 }
-if(isset($_GET['wishId'])){
-    $wishInfo = getWishInfo();
+if(isset($_GET['userId'])){
+    $userInfo = getUserInfo();
 }
 ?>
 
@@ -90,7 +91,7 @@ if(isset($_GET['wishId'])){
       </div>
     </nav>
     <!--Navigation Bar End-->
-    <h3><?php echo $_GET['wishName']?></h3>
+    <h3><?php echo $_GET['firstName']?></h3>
     <form method="GET">
         <!-- REGISTRATION FORM -->
         <div class="text-center" style="padding:50px 0">
@@ -103,24 +104,24 @@ if(isset($_GET['wishId'])){
         				<div class="login-group">
         					<div class="form-group"> <!--first name-->
         						<label for="reg_username" class="sr-only"></label>
-        						<input type="hidden" name="wishId" value="<?=$wishInfo['wishId']?>"/>
-        						<input type="text" class="form-control" id="reg_username" name="wishName" value="<?=$wishInfo['wishName']?>" placeholder="Name of Item">
+        						<input type="hidden" name="wishId" value="<?=$userInfo['userId']?>"/>
+        						<input type="text" class="form-control" id="reg_username" name="firstName" value="<?=$userInfo['firstName']?>" placeholder="First Name">
         					</div>
         					<div class="form-group">    <!--last name-->
         						<label for="reg_password" class="sr-only">Password</label>
-        						<input type="number" class="form-control" id="reg_password" name="wishPrice" value="<?=$wishInfo['wishPrice']?>" placeholder="Price (Round up value)">
+        						<input type="text" class="form-control" id="reg_password" name="lastName" value="<?=$userInfo['lastName']?>" placeholder="Last Name">
         					</div>
         					<div class="form-group">    <!--username-->
         						<label for="reg_password_confirm" class="sr-only">Password Confirm</label>
-        						<input type="text" class="form-control" id="reg_password_confirm" name="description" value="<?=$wishInfo['description']?>" placeholder="Comments">
+        						<input type="text" class="form-control" id="reg_password_confirm" name="username" value="<?=$userInfo['username']?>" placeholder="Username">
         					</div>
         					
         					<div class="form-group">    <!--password-->
         						<label for="reg_email" class="sr-only">Email</label>
-        						<input type="text" class="form-control" id="reg_email" name="wishUser" value="<?=$wishInfo['wishUser']?>" placeholder="Name of Person">
+        						<input type="text" class="form-control" id="reg_email" name="password" value="<?=$userInfo['password']?>" placeholder="Password">
         					</div>
         				</div>
-        				<button type="submit" name="updateWish" class="login-button"><i class="fa fa-chevron-right"></i></button>
+        				<button type="submit" name="updateUser" class="login-button"><i class="fa fa-chevron-right"></i></button>
         			</div>
         		</form>
         	</div>

@@ -34,9 +34,9 @@ if(!isset($_SESSION['fullName']))// if(!isset($_SESSION['userName']) || !isset($
           if(isset($_SESSION['admin']))
           {
           echo'<li><a href="admin.php">Update/Delete</a></li>';
+          echo'<li><a href="index.php">Delete User</a></li>';
           }
           ?>
-          
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <!--<li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>-->
