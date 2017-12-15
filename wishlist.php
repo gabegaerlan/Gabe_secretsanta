@@ -28,9 +28,14 @@ if(!isset($_SESSION['fullName']))// if(!isset($_SESSION['userName']) || !isset($
         <ul class="nav navbar-nav">
           <li class="active"><a href="main.html">Home</a></li>
           <li><a href="list.php">User List</a></li>
-          <li><a href="wishlist.php">Wish list</a></li>
+          <li><a href="wishlist.php">Wishlist</a></li>
           <li><a href="add.php">Add to Wishlist</a></li>
-          <li><a href="admin.php">Update/Delete Wishlist</a></li>
+          <?php
+          if(isset($_SESSION['admin']))
+          {
+          echo'<li><a href="admin.php">Update/Delete</a></li>';
+          }
+          ?>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <!--<li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>-->
@@ -44,7 +49,7 @@ if(!isset($_SESSION['fullName']))// if(!isset($_SESSION['userName']) || !isset($
     
     <table align="center" border=2>
     <th><b>Name of Person</b></th>
-    <th><b>Wishlist ID</b></th>
+    <!--<th><b>Wishlist ID</b></th>-->
     <th><b>Wishlist Name</b></th>
     <th><b>Wishlist Price</b></th>
     <th><b>Wishlist Description</b></th>
@@ -63,7 +68,7 @@ if(!isset($_SESSION['fullName']))// if(!isset($_SESSION['userName']) || !isset($
       {
         echo'<tr>';
         echo'<td>'.$d['wishUser'].'</td>';
-        echo'<td>'.$d['wishId'].'</td>';
+        // echo'<td>'.$d['wishId'].'</td>';
         echo'<td>'.$d['wishName'].'</td>';
         echo'<td>$'.$d['wishPrice'].'</td>';
         echo'<td>'.$d['description'].'</td>';

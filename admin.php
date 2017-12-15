@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['fullName']))// if(!isset($_SESSION['userName']) || !isset($_SESSION['adminName']))
+if(!isset($_SESSION['admin']))// if(!isset($_SESSION['userName']) || !isset($_SESSION['adminName']))
 {
     header("Location: login.php");
 }
@@ -38,13 +38,18 @@ if(!isset($_SESSION['fullName']))// if(!isset($_SESSION['userName']) || !isset($
         <ul class="nav navbar-nav">
           <li class="active"><a href="main.html">Home</a></li>
           <li><a href="list.php">User List</a></li>
-          <li><a href="wishlist.php">Wish List</a></li>
+          <li><a href="wishlist.php">Wishlist</a></li>
           <li><a href="add.php">Add to Wishlist</a></li>
-          <li><a href="admin.php">Update/Delete Wishlist</a></li>
+          <?php
+          if(isset($_SESSION['admin']))
+          {
+          echo'<li><a href="admin.php">Update/Delete</a></li>';
+          }
+          ?>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <!--<li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>-->
-          <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
+          <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
         </ul>
       </div>
     </nav>

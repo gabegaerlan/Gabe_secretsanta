@@ -28,9 +28,15 @@ if(!isset($_SESSION['fullName']))// if(!isset($_SESSION['userName']) || !isset($
         <ul class="nav navbar-nav">
           <li class="active"><a href="main.html">Home</a></li>
           <li><a href="list.php">User List</a></li>
-          <li><a href="wishlist.php">Wish List</a></li>
+          <li><a href="wishlist.php">Wishlist</a></li>
           <li><a href="add.php">Add to Wishlist</a></li>
-          <li><a href="admin.php">Update/Delete Wishlist</a></li>
+          <?php
+          if(isset($_SESSION['admin']))
+          {
+          echo'<li><a href="admin.php">Update/Delete</a></li>';
+          }
+          ?>
+          
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <!--<li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>-->
@@ -44,10 +50,10 @@ if(!isset($_SESSION['fullName']))// if(!isset($_SESSION['userName']) || !isset($
     
     
     <table align="center" border=2>
-    <th><b>ID</b></th>
+    <!--<th><b>ID</b></th>-->
     <th><b>FIRST NAME</b></th>
     <th><b>LAST NAME</b></th>
-    <th><b>USERNAME</b></th>
+    <!--<th><b>USERNAME</b></th>-->
     <?php
     include'./functions.php';
     //   echo'<table align="center" border=2>';
@@ -61,10 +67,10 @@ if(!isset($_SESSION['fullName']))// if(!isset($_SESSION['userName']) || !isset($
       foreach($display as $d)
       {
         echo'<tr>';
-        echo'<td>'.$d['userId'].'</td>';
+        // echo'<td>'.$d['userId'].'</td>';
         echo'<td>'.$d['firstName'].'</td>';
         echo'<td>'.$d['lastName'].'</td>';
-        echo'<td>'.$d['username'].'</td>';
+        // echo'<td>'.$d['username'].'</td>';
         echo'</tr>';
       }
     //   echo'</table>';

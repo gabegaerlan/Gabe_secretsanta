@@ -36,7 +36,7 @@ function loginProcess()
             $_SESSION['username'] = $record['username'];
             $_SESSION['fullName'] = $record['firstName'] . "  " . $record['lastName'];
         
-            header("Location: list.php");
+            header("Location: wishlist.php");
         }
     }
 }
@@ -73,8 +73,9 @@ function loginAdmin()
             $_SESSION['login'] = true;
             $_SESSION['username'] = $record['username'];
             $_SESSION['fullName'] = $record['firstName'] . "  " . $record['lastName'];
+            $_SESSION['admin'] = $record['firstName'].''.$record['lastName'];
         
-            header("Location: list.php");
+            header("Location: wishlist.php");
         }
     }
 }

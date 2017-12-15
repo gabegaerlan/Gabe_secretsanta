@@ -21,9 +21,14 @@
         <ul class="nav navbar-nav">
           <li class="active"><a href="main.html">Home</a></li>
           <li><a href="list.php">User List</a></li>
-          <li><a href="wishlist.php">Wish List</a></li>
+          <li><a href="wishlist.php">Wishlist</a></li>
           <li><a href="add.php">Add to Wishlist</a></li>
-          <li><a href="admin.php">Update/Delete Wishlist</a></li>
+          <?php
+          if(isset($_SESSION['admin']))
+          {
+          echo'<li><a href="admin.php">Update/Delete</a></li>';
+          }
+          ?>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <!--<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>-->
