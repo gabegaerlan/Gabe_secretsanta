@@ -1,5 +1,5 @@
 body{
-    background-image: url("winter.png");
+    background-image: url("xmas.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -8,19 +8,25 @@ body{
 .userLogin{
     text-align:center;
     font-family: 'Fugaz One', cursive;
-    color:gray;
+    color:white;
     font-size:5em;
+}
+h1{
+  font-size:5em;
 }
 
 .signup{
     text-align:center;
     font-family: 'Fugaz One', cursive;
-    color:gray;
+    color:white;
     font-size:5em;
 }
 
 h2 {
-    text-align: left;
+    text-align: center;
+    color:white;
+    font-family: 'Fugaz One', cursive;
+    font-size:2em;
 }
 
 

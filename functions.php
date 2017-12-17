@@ -109,8 +109,8 @@ function signup()
         $stmt->execute($np);
         
         echo"<center>User Was Added Successfully!</center>";
+        header("Location: login.php");
     }
-    
 }
 
 
@@ -170,6 +170,7 @@ function addWishlist()
         $stmt->execute($np);
         
         echo"<center>Wishlist Updated!</center>";
+        header("Location: wishlist.php");
     }    
 }
 
