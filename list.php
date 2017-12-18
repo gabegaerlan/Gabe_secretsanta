@@ -46,7 +46,7 @@ if(!isset($_SESSION['fullName']))// if(!isset($_SESSION['userName']) || !isset($
     </nav>
     <!--Navigation Bar End-->
     
-    <h2>Welcome <?=$_SESSION['fullName']?>!</h2>
+   <h2><font color="red" face="Fugaz One">Welcome <?=$_SESSION['fullName']?>!</h2></font>
     
     
     <table align="center" border=2>

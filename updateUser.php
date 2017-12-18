@@ -104,7 +104,7 @@ if(isset($_GET['userId'])){
         				<div class="login-group">
         					<div class="form-group"> <!--first name-->
         						<label for="reg_username" class="sr-only"></label>
-        						<input type="hidden" name="wishId" value="<?=$userInfo['userId']?>"/>
+        						<input type="hidden" name="userId" value="<?=$userInfo['userId']?>"/>
         						<input type="text" class="form-control" id="reg_username" name="firstName" value="<?=$userInfo['firstName']?>" placeholder="First Name">
         					</div>
         					<div class="form-group">    <!--last name-->

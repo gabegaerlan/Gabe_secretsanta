@@ -56,7 +56,7 @@ if(!isset($_SESSION['admin']))// if(!isset($_SESSION['userName']) || !isset($_SE
     </nav>
     <!--Navigation Bar End-->
     
-    <h2>Welcome <?=$_SESSION['fullName']?>!</h2>
+    <h2><font color="red" face="Fugaz One">Welcome <?=$_SESSION['fullName']?>!</h2></font>
     <?php
       session_start();
       include'./functions.php';
